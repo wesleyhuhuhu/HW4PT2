@@ -11,6 +11,24 @@
       for the customElement vs the page layout and CRUD actions if you do them. Regardless of 
       what you do you use ES modules and vanilla JS.
     -->
+    <style media="screen">
+      #cards {
+        display: grid;
+        grid-auto-flow: column;
+      }
+      project-card {
+        padding: 10%;
+        margin: 10%;
+        border: 1px solid black;
+        border-radius: 10%;
+      }
+      .hidden {
+        opacity: 0;
+      }
+      .show {
+        opacity: 1;
+      }
+    </style>
 </head>
 
 <body>
@@ -49,27 +67,18 @@
 
       You should be able to do this for some canned set of data you store in localStorage 
       and the cloud.
-
-      For extra credit (10%) you can create a second page crud.html which has a form that allows you 
-      to perform CRUD actions (create, add, update, delete) on the data in either the localStorage or 
-      cloud based storage. You may roll this code yourself or use something like ZingGrid or any 
-      other simple custom element you can find for your fake backend.
-
-      In all cases except the following section you may not use any libraries or frameworks. You 
-      must use the native APIs and vanilla JavaScript. This includes Lit and jQuery as well as any 
-      other library or framework.
-
-      Advanced students with existing framework knowledge may wish to perform this activity again 
-      with a framework or library of their choice for further extra credit. If you do this, you 
-      must still do the vanilla JavaScript version first and then do the framework version as 
-      further extra credit (5% more). You must however do the first extra credit before you attempt 
-      the second.  We will not accept second extra credits without the first. The second extra credit 
-      requires a README.md with an analysis of the performance and lines of code impact of using the 
-      framework or library. If you perform the 2nd extra credit you must be cautious to provide a 
-      fully working example that does not require complex set-up for the grader. You should either 
-      use a local file, CDN or other simple method to load the framework or library. You should not 
-      require the grader to install anything or run any build scripts.
     -->
+    <legend>Buttons:</legend>
+    <label for="local">Load Local</label>
+    <input type="button" id="local" value="Load">
+    <hr>
+    <label for="remote">Load Remote</label>
+    <input type="button" id="remote" value="Load">
+    <section id="cards" class="hidden">
+      <project-card></project-card>
+      <project-card></project-card>
+      <project-card></project-card>
+    </section>
 </body>
-
+<script src="load.js"></script>
 </html>
